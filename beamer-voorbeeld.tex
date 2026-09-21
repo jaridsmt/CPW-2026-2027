@@ -1,0 +1,168 @@
+% beamer-voorbeeld.tex
+%
+\documentclass{beamer} %OF \documentclass[handout]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[dutch]{babel}
+\usepackage{graphicx}
+%%
+%% Er zijn heel wat verschillende thema's ter beschikking!
+%%
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+%
+\setbeamercovered{transparent}
+%% probeer ook eens invisible, transparent, dynamic of highly dynamic.
+%% invisible is standaard
+%
+\title[Beamer]{Beamer: presentaties maken met \LaTeX}
+\subtitle{Een instructief voorbeeld}
+\date[2020--2021]{Computerproject Wiskunde}
+\author[K. Coolsaet]{K. Coolsaet (G. Deschrijver)}
+\institute[UGent]{Universiteit Gent}
+%
+\newtheorem{stelling}{Stelling}
+\newtheorem{gevolg}[stelling]{Gevolg}
+\newtheorem{voorbeeld}[stelling]{Voorbeeld}
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\part{Introductie}
+%\frame{\partpage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Inleiding}
+
+\begin{frame}{\secname} %% \secname bevat de laatste 'section'-titel
+  \begin{itemize}
+  \item Beamer laat toe om \emph{wiskundige} slides te maken, omdat je nog
+  steeds alle standaard \LaTeX-opdrachten kunt gebruiken
+  \pause
+  \item Je kan ook `\emph{overlays}' maken.
+  \pause
+  \item Er bestaan verschillende Beamerstijlen om het
+  uitzicht van de presentatie te veranderen.
+  \pause
+  \item Het output-bestand is een PDF-bestand dat op alle platformen exact
+  hetzelfde uitzicht heeft.
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Frames}
+
+\begin{frame}{\secname}{Opties}
+
+Een presentatie wordt opgedeeld in `\emph{frames}' (zie broncode).
+  \pause  
+  \begin{itemize}
+  \item Frames kunnen een titel hebben en een subtitel, maar die zijn niet
+  verplicht
+  \pause
+  \item Frames met optie [\texttt{plain}] tonen geen koplijnen, voetbalken,
+  zijbalken, \dots
+  \end{itemize}
+\pause
+Je kan nog steeds \texttt{section} en \texttt{subsection} gebruiken, en een
+inhoudstafel laten maken, zoals in volgende slide.
+\pause
+Of in de slide daarna, waar we enkel de huidige paragraaf tonen
+\end{frame}
+
+
+\begin{frame}{Inhoud}
+\tableofcontents  %% probeer ook eens \tableofcontents[pausesections]
+\end{frame}
+
+\begin{frame}{Inhoud --- tweede versie}
+\tableofcontents[currentsection]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Nieuwe omgevingen}
+%
+\begin{frame}{\secname}{Blokken}
+  \begin{block}{Een blok}
+  Dit blok werd aangemaakt met de \LaTeX-omgeving `\texttt{block}'.
+
+  Een blok kan gerust meerdere paragrafen bevatten.
+  \end{block}
+  \pause
+  \begin{alertblock}{Let op}
+  En dit blok werd geproduceerd met `\texttt{alertblock}'. Hetzelfde
+  kleureffect kan je ook \alert{`\emph{in line}'} verkrijgen.
+  \end{alertblock}
+  \pause
+  \begin{exampleblock}{Voorbeeld}
+  En met `\texttt{exampleblock}'
+  \end{exampleblock}
+  Titel is verplicht! (Maar maak hem desnoods blanco.)
+\end{frame}
+
+\begin{frame}{Stellingen}
+Stellingen (en bewijzen) worden als blokken getoond.
+\begin{stelling}[Murphy]
+Alle oneven getallen zijn priem.
+\end{stelling}
+\begin{proof}
+3 is priem, 5 is priem, 7 is priem, 9 is priem, 11 is priem, 13 is priem, enz.
+
+De stelling volgt door inductie.
+\end{proof}
+\begin{voorbeeld}
+113, 171 en 211 zijn priem.
+\end{voorbeeld}
+\begin{gevolg}
+Geen enkel even getal is priem, behalve 2.
+\end{gevolg}
+\end{frame}
+
+
+\section{Meerdere kolommen}
+
+\begin{frame}{\secname}
+  \begin{columns}
+    \begin{column}[t]{5cm}
+      \begin{block}{}
+Tekst kan in meerdere kolommen worden opgedeeld.
+
+Merk trouwens op dat dit blok in de linkerkolom \emph{geen} titel heeft.
+      \end{block}
+    \end{column}
+    \pause
+    \begin{column}[t]{5cm}
+      In dit voorbeeld:
+      \begin{itemize}
+      \item 2 kolommen die 5cm breed zijn
+      \item in de kolommen kan je tekst, blokken en andere omgevingen opnemen
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Overlays}
+
+\begin{frame}{\secname}
+Overlays kunnen nog ingewikkelder gemaakt worden:
+\begin{itemize}
+\item<4-> En nu pas zijn alle puntjes zichtbaar.
+\item<3-> Toen kwam er een tweede lijn bij
+\item<2-> Eerst zag je niets
+\end{itemize}
+
+\only<1-4>{Bijvoorbeeld wanneer je de dingen niet \textbf<2-4>{van boven naar
+beneden} wil laten verschijnen.}
+\begin{alertblock}<5->{Het kan trouwens nog veel erger?!}
+Niet overdrijven!
+\end{alertblock}
+\end{frame}
+
+
+\end{document}
+

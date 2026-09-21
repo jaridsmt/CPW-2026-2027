@@ -1,0 +1,72 @@
+% latex-oef2.tex
+%
+\documentclass[11pt,a4paper]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[dutch]{babel}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\begin{document}
+Combinatoriek
+Variaties
+We trekken k keer uit een verzameling van n elementen, zonder 
+terugleggen en onthouden de volgorde. Voor de eerste trekking zijn er 
+n 
+mogelijkheden. Voor elke volgende trekking is er steeds één mogelijkheid minder 
+dan voor de vorige. Een getrokken rijtje heet een variatie. Daarvan 
+zijn er
+Voorbeeld: vier vrienden hebben iets te vieren en ze hebben een complete zaal 
+gehuurd. Er zijn 200 plaatsen en ze gaan zo maar ergens zitten. Hoeveel 
+mogelijkheden zijn er?
+Als we alle n elementen trekken, dus als k = n, krijgen we een 
+mogelijke manier om de n elementen van de verzameling op volgorde te zetten. 
+Zo'n volgorde heet een permutatie. Daarvan zijn er
+Voorbeeld: we sorteren een pak kaarten (trekken 52 kaarten uit het pak); er
+zijn dan 52! mogelijkheden.
+
+Herhalingsvariaties
+We trekken k keer uit een verzameling van n elementen, met 
+terugleggen en onthouden de volgorde. Voor elk van de k trekkingen 
+zijn er n mogelijkheden. Een getrokken rijtje heet een 
+herhalingsvariatie. Daarvan zijn er
+Voorbeeld: Hoeveel pincodes zijn er? Men kiest 4 maal uit 10 cijfers dus .
+
+Combinaties
+We trekken k keer uit een verzameling van n elementen, zonder 
+terugleggen en letten niet op de volgorde. Een getrokken k-tal heet 
+een 
+combinatie. We kunnen eerst wel op de volgorde letten en die daarna 
+vergeten. Er zijn dan k! variaties die hetzelfde k-tal opleveren. Het 
+aantal 
+verschillende combinaties is dus:
+Voorbeeld: Hoeveel verschillende ploegen van 3 deelnemers kunnen we vormen uit 
+10 deelnemers. Dat zijn er
+
+Herhalingscombinaties
+We trekken k keer uit een verzameling van n elementen, met 
+terugleggen 
+en letten niet op de volgorde. Een getrokken k-tal heet een 
+herhalingscombinatie. We kunnen zo'n k-tal beschrijven door van elk van de 
+n elementen aan te geven hoe vaak het gekozen is. Dit kan aanschouwelijk 
+gebeuren door voor elk element net zoveel nullen te schrijven als het gekozen 
+is 
+en tussen de nullen van de verschillende elementen een 1 als scheiding te 
+schrijven. Het aantal verschillende herhalingscombinaties is dan het aantal 
+mogelijke rijtjes bestaande uit k keer een 0 en n-1 keer een 1. We 
+moeten van 
+de k+n-1 plaatsen in de rij er k aanwijzen waar een 0 komt te staan. 
+Het aantal 
+is dus net zoveel als het aantal combinaties van k uit k+n-1:
+Voorbeeld: Op hoeveel manieren kun je 5 eieren kleuren als je over 3 kleuren 
+beschikt. Dus k=5 en n=3. Dat kan dus op
+manieren.
+Toepassing
+Op hoeveel manieren kunnen n gelijke knikkers verdeeld worden over k 
+verschillende bakjes, zo, dat geen bakje leeg is?
+
+Doe in elk bakje alvast een knikker. Er blijven er n-k over. Deze worden 
+nog over de bakjes verdeeld via een herhalingscombinatie, dus van n-k uit 
+k; voor elk van de resterende knikkers wordt bepaald in welk bakje hij 
+komt. Er zijn dus:
+mogelijkheden.
+\end{document}
